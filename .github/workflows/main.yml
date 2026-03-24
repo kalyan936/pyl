@@ -35,23 +35,15 @@ jobs:
         run: |
           python -m pip install --upgrade pip
           pip install buildozer cython pyjnius
-          if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+          if [ -f lp/requirements.txt ]; then pip install -r lp/requirements.txt; fi
       
       - name: Build APK with Buildozer
+        working-directory: ./lp
         run: buildozer android debug
       
       - name: Upload APK artifact
         uses: actions/upload-artifact@v4
         with:
           name: python-learning-app
-          path: bin/*.apk
+          path: lp/bin/*.apk
           retention-days: 30
-      
-      - name: Create Release
-        if: success()
-        uses: softprops/action-gh-release@v1
-        with:
-          files: bin/*.apk
-          tag_name: v${{ github.run_number }}
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
