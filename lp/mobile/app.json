@@ -1,0 +1,24 @@
+{
+  "expo": {
+    "name": "PyLearn AI",
+    "slug": "pylearn-ai",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "dark",
+    "scheme": "pylearn",
+    "splash": {
+      "backgroundColor": "#0a0a1a"
+    },
+    "android": {
+      "package": "com.pylearn.ai",
+      "adaptiveIcon": {
+        "backgroundColor": "#0a0a1a"
+      },
+      "versionCode": 1
+    },
+    "plugins": [
+      "expo-splash-screen"
+    ]
+  }
+}
