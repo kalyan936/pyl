@@ -19,6 +19,11 @@ android.minapi = 21
 android.ndk = 25b
 android.accept_sdk_license = True
 
+# Use prebuilt recipes
+android.private_storage = True
+android.entrypoint = org.renpy.android.PythonActivity
+android.bootstrap = sdl2
+
 [buildozer]
 log_level = 2
 warn_on_root = 1
